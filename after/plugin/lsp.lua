@@ -30,7 +30,7 @@ lsp.set_preferences({
 	},
 })
 
-lsp.on_attach(function(client, bufnr)
+local on_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set("n", "gd", function()
@@ -63,10 +63,21 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function()
 		vim.lsp.buf.signature_help()
 	end, opts)
-end)
+end
+
+lsp.on_attach(on_attach)
 
 lsp.setup()
 
 vim.diagnostic.config({
 	virtual_text = true,
+})
+
+local dart_lsp = lsp.build_options("dartls", {})
+
+require("flutter-tools").setup({
+	lsp = {
+		on_attach = on_attach,
+		capabilities = dart_lsp.capabilities,
+	},
 })

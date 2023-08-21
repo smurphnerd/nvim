@@ -20,6 +20,7 @@ rest.setup({
 			json = "jq",
 		},
 	},
+	env_file = "rest.env",
 })
 
 local keymap = vim.api.nvim_set_keymap

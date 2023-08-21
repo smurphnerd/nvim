@@ -119,20 +119,30 @@ _G.packer_plugins = {
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
+  ["flutter-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
+    url = "https://github.com/akinsho/flutter-tools.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["git-worktree.nvim"] = {
+    loaded = true,
+    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
+    url = "https://github.com/ThePrimeagen/git-worktree.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  harpoon = {
-    loaded = true,
-    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/harpoon",
-    url = "https://github.com/theprimeagen/harpoon"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -214,6 +224,11 @@ _G.packer_plugins = {
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
   ["nvim-ts-autotag"] = {
     load_after = {},
     loaded = true,
@@ -261,11 +276,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
-  },
-  ["vim-easymotion"] = {
-    loaded = true,
-    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/vim-easymotion",
-    url = "https://github.com/easymotion/vim-easymotion"
   },
   ["vim-fugitive"] = {
     loaded = true,

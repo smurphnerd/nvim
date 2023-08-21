@@ -1,1 +1,5 @@
 vim.keymap.set("n", "<leader>gs", ":Git<CR>")
+vim.keymap.set("n", "<leader>gds", ":Gvdiffsplit!<CR>")
+vim.keymap.set("n", "<leader>d2", ":diffget //2<CR>")
+vim.keymap.set("n", "<leader>d3", ":diffget //3<CR>")
+vim.keymap.set("n", "<leader>dp", ":diffput ")

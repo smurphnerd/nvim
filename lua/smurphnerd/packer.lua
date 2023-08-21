@@ -5,7 +5,6 @@ return require("packer").startup(function(use)
 	-- navigation
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
-	use("theprimeagen/harpoon")
 
 	-- treesitter
 	use({
@@ -15,6 +14,8 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
+	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- appearance
 	use({
@@ -37,15 +38,14 @@ return require("packer").startup(function(use)
 
 	-- git
 	use("tpope/vim-fugitive")
+	use("ThePrimeagen/git-worktree.nvim")
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 	use("lewis6991/gitsigns.nvim")
 	use("github/copilot.vim")
-	use("easymotion/vim-easymotion")
 
 	-- dap
 	use("mfussenegger/nvim-dap")
@@ -57,6 +57,13 @@ return require("packer").startup(function(use)
 		"microsoft/vscode-js-debug",
 		opt = true,
 		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+	})
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim",
+		},
 	})
 
 	-- markdown preview
