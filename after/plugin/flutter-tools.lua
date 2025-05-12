@@ -1,8 +1,8 @@
 require("flutter-tools").setup({
-	-- debugger = {
-	-- 	enabled = true,
-	-- 	run_via_dap = true,
-	-- },
+	debugger = {
+		enabled = true,
+		run_via_dap = true,
+	},
 	lsp = {
 		settings = {
 			renameFilesWithClasses = "always",
@@ -27,5 +27,6 @@ vim.keymap.set("n", "<leader>FD", ":FlutterDevices<CR>")
 vim.keymap.set("n", "<leader>FE", ":FlutterEmulators<CR>")
 vim.keymap.set("n", "<leader>FQ", ":FlutterQuit<CR>")
 vim.keymap.set("n", "<leader>rn", ":FlutterRename<CR>")
+vim.keymap.set("n", "<leader>Fr", ":FlutterReload<CR>")
 vim.keymap.set("n", "<leader>FR", ":FlutterRestart<CR>")
-vim.keymap.set("n", "<leader>Fr", ":FlutterRun<CR>")
+vim.keymap.set("n", "<leader>FS", ":FlutterRun<CR>")

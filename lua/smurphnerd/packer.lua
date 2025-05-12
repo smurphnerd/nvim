@@ -41,23 +41,18 @@ return require("packer").startup(function(use)
 	use("ThePrimeagen/git-worktree.nvim")
 
 	-- formatting & linting
-	use("jose-elias-alvarez/null-ls.nvim")
+	use("nvimtools/none-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use("lewis6991/gitsigns.nvim")
 	use("github/copilot.vim")
+	use("vale1410/vim-minizinc")
 
 	-- dap
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
 	use("leoluz/nvim-dap-go") -- dap for go
-	use("mxsdev/nvim-dap-vscode-js") -- dap for javascript
-	use({
-		"microsoft/vscode-js-debug",
-		opt = true,
-		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-	})
 	use({
 		"akinsho/flutter-tools.nvim",
 		requires = {
@@ -65,9 +60,19 @@ return require("packer").startup(function(use)
 			"stevearc/dressing.nvim",
 		},
 	})
+	use("mxsdev/nvim-dap-vscode-js")
+	use({
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+	})
 
 	-- markdown preview
 	use("iamcco/markdown-preview.nvim")
+
+	-- latex
+	use("lervag/vimtex")
+	use("SirVer/ultisnips")
 
 	use("rest-nvim/rest.nvim")
 
@@ -93,4 +98,7 @@ return require("packer").startup(function(use)
 			{ "rafamadriz/friendly-snippets" },
 		},
 	})
+
+	-- python
+	use("deoplete-plugins/deoplete-jedi")
 end)

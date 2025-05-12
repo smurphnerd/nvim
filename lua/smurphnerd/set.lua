@@ -1,3 +1,5 @@
+vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/UltiSnips" }
+vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
 vim.opt.guicursor = ""
 
 vim.opt.number = true

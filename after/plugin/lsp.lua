@@ -1,12 +1,12 @@
-local lsp = require("lsp-zero")
+local lsp_zero = require("lsp-zero")
 
-lsp.preset("recommended")
+lsp_zero.preset("recommended")
 
-lsp.nvim_workspace()
+lsp_zero.nvim_workspace()
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
+local cmp_mappings = lsp_zero.defaults.cmp_mappings({
 	["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 	["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
 	["<C-y>"] = cmp.mapping.confirm({ select = true }),
@@ -17,11 +17,11 @@ cmp_mappings["<Tab>"] = nil
 cmp_mappings["<S-Tab>"] = nil
 cmp_mappings["<CR>"] = nil
 
-lsp.setup_nvim_cmp({
+lsp_zero.setup_nvim_cmp({
 	mapping = cmp_mappings,
 })
 
-lsp.set_preferences({
+lsp_zero.set_preferences({
 	sign_icons = {
 		error = "E",
 		warn = "W",
@@ -65,15 +65,17 @@ local on_attach = function(client, bufnr)
 	end, opts)
 end
 
-lsp.on_attach(on_attach)
+lsp_zero.on_attach(on_attach)
 
-lsp.setup()
+lsp_zero.setup_servers({ "pyright" })
+
+lsp_zero.setup()
 
 vim.diagnostic.config({
 	virtual_text = true,
 })
 
-local dart_lsp = lsp.build_options("dartls", {})
+local dart_lsp = lsp_zero.build_options("dartls", {})
 
 require("flutter-tools").setup({
 	lsp = {

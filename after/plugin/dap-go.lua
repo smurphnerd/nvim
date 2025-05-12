@@ -10,7 +10,13 @@ dap.setup({
 			name = "Debug iLearn API",
 			request = "launch",
 			program = vim.fn.getcwd() .. "/cmd/api/main.go",
-			cwd = vim.fn.getcwd() .. "/cmd/api",
+		},
+		{
+			type = "go",
+			name = "Debug iLearn API Test",
+			request = "launch",
+			program = vim.fn.getcwd() .. "/cmd/api/main.go",
+			args = { "--testing" },
 		},
 	},
 	delve = {

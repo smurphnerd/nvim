@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["deoplete-jedi"] = {
+    loaded = true,
+    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/deoplete-jedi",
+    url = "https://github.com/deoplete-plugins/deoplete-jedi"
+  },
   ["dressing.nvim"] = {
     loaded = true,
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/dressing.nvim",
@@ -174,10 +179,10 @@ _G.packer_plugins = {
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["null-ls.nvim"] = {
+  ["none-ls.nvim"] = {
     loaded = true,
-    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/none-ls.nvim",
+    url = "https://github.com/nvimtools/none-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -272,6 +277,11 @@ _G.packer_plugins = {
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/transparent.nvim",
     url = "https://github.com/xiyaowong/transparent.nvim"
   },
+  ultisnips = {
+    loaded = true,
+    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
+  },
   undotree = {
     loaded = true,
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/undotree",
@@ -296,6 +306,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/Users/Smurphy/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   },
   ["vscode-js-debug"] = {
     loaded = false,

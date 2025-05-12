@@ -35,3 +35,7 @@ vim.keymap.set(
 	"<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
 	{ noremap = true, silent = true }
 )
+
+vim.keymap.set("n", "<leader>p", vim.lsp.buf.format)
+
+vim.keymap.set("n", "<leader>ie", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
