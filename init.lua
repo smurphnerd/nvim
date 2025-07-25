@@ -1,4 +1,4 @@
-require("theprimeagen")
+require("smurphnerd")
 
 -- hello fem
 

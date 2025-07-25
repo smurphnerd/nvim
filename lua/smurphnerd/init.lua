@@ -1,6 +1,6 @@
-require("theprimeagen.set")
-require("theprimeagen.remap")
-require("theprimeagen.lazy_init")
+require("smurphnerd.set")
+require("smurphnerd.remap")
+require("smurphnerd.lazy_init")
 
 -- DO.not
 -- DO NOT INCLUDE THIS
