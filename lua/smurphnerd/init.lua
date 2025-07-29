@@ -1,6 +1,7 @@
 require("smurphnerd.set")
 require("smurphnerd.remap")
 require("smurphnerd.lazy_init")
+require("smurphnerd.commands")
 
 -- DO.not
 -- DO NOT INCLUDE THIS

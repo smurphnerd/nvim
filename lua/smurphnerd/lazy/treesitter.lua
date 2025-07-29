@@ -47,6 +47,41 @@ return {
                 -- Instead of true it can also be a list of languages
                 additional_vim_regex_highlighting = { "markdown" },
             },
+            textobjects = {
+                move = {
+                    enable = true,
+                    set_jumps = false, -- you can change this if you want.
+                    goto_next_start = {
+                        --- ... other keymaps
+                        ["]c"] = { query = "@code_cell.inner", desc = "next code block" },
+                    },
+                    goto_previous_start = {
+                        --- ... other keymaps
+                        ["[c"] = { query = "@code_cell.inner", desc = "previous code block" },
+                    },
+                },
+                select = {
+                    enable = true,
+                    lookahead = true, -- you can change this if you want
+                    keymaps = {
+                        --- ... other keymaps
+                        ["ic"] = { query = "@code_cell.inner", desc = "in block" },
+                        ["ac"] = { query = "@code_cell.outer", desc = "around block" },
+                    },
+                },
+                swap = { -- Swap only works with code blocks that are under the same
+                         -- markdown header
+                    enable = true,
+                    swap_next = {
+                        --- ... other keymap
+                        ["<leader>scl"] = "@code_cell.outer",
+                    },
+                    swap_previous = {
+                        --- ... other keymap
+                        ["<leader>sch"] = "@code_cell.outer",
+                    },
+                },
+            }
         })
 
         local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
