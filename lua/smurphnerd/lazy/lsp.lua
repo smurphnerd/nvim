@@ -30,6 +30,7 @@ return {
 			formatters_by_ft = {
 				python = { "black" },
 				lua = { "stylua" },
+                markdown = { "prettier" },
 			},
 		})
 		local cmp = require("cmp")
