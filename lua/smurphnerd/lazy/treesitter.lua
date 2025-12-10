@@ -53,11 +53,11 @@ return {
                     set_jumps = false, -- you can change this if you want.
                     goto_next_start = {
                         --- ... other keymaps
-                        ["]c"] = { query = "@code_cell.inner", desc = "next code block" },
+                        ["]c"] = { query = "@codechunk.inner", desc = "next code block" },
                     },
                     goto_previous_start = {
                         --- ... other keymaps
-                        ["[c"] = { query = "@code_cell.inner", desc = "previous code block" },
+                        ["[c"] = { query = "@codechunk.inner", desc = "previous code block" },
                     },
                 },
                 select = {
@@ -65,8 +65,8 @@ return {
                     lookahead = true, -- you can change this if you want
                     keymaps = {
                         --- ... other keymaps
-                        ["ic"] = { query = "@code_cell.inner", desc = "in block" },
-                        ["ac"] = { query = "@code_cell.outer", desc = "around block" },
+                        ["ic"] = { query = "@codechunk.inner", desc = "in block" },
+                        ["ac"] = { query = "@codechunk.outer", desc = "around block" },
                     },
                 },
                 swap = { -- Swap only works with code blocks that are under the same
@@ -74,11 +74,11 @@ return {
                     enable = true,
                     swap_next = {
                         --- ... other keymap
-                        ["<leader>scl"] = "@code_cell.outer",
+                        ["<leader>scl"] = "@codechunk.outer",
                     },
                     swap_previous = {
                         --- ... other keymap
-                        ["<leader>sch"] = "@code_cell.outer",
+                        ["<leader>sch"] = "@codechunk.outer",
                     },
                 },
             }
@@ -114,7 +114,19 @@ return {
                 -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
                 separator = nil,
                 zindex = 20, -- The Z-index of the context window
-                on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+                on_attach = function(buf)
+                    -- Validate buffer
+                    local ok = pcall(vim.api.nvim_buf_is_valid, buf)
+                    if not ok then return false end
+
+                    -- Disable for special buffer types to prevent window id errors
+                    local buftype = vim.api.nvim_buf_get_option(buf, 'buftype')
+                    if buftype ~= '' and buftype ~= 'help' then
+                        return false
+                    end
+
+                    return true
+                end,
             }
         end
     }
