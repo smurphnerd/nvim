@@ -30,7 +30,16 @@ return {
 			formatters_by_ft = {
 				python = { "black" },
 				lua = { "stylua" },
-                markdown = { "prettier" },
+				markdown = { "prettier" },
+				typescript = { "prettier" },
+				javascript = { "prettier" },
+				css = { "prettier" },
+				html = { "prettier" },
+				json = { "prettier" },
+				yaml = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
+				tex = { "latexindent" },
 			},
 		})
 		local cmp = require("cmp")
@@ -50,6 +59,7 @@ return {
 				"rust_analyzer",
 				"gopls",
 				"pyright",
+				"ts_ls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
